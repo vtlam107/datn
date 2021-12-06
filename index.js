@@ -8,9 +8,15 @@ const router = require('./routes/index');
 
 const userRouter = require('./routes/user');
 
+const productRouter = require('./routes/product');
+
 app.use(express.json())
 
 app.use('/user', userRouter);
+
+app.use('/product', productRouter);
+
+app.use('/', router)
 
 const options = {
     keepAlive: 1,

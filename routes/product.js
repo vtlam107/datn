@@ -5,14 +5,14 @@ const router = express.Router();
 const {
     createProduct,
     listProduct,
-    deleteProduct,
     findProduct,
     deleteProduct,
+    updateProduct,
 } = require('../controller/product')
 
-router.get('/create-product', createProduct)
-router.get('/list-products', listProduct)
-router.get('/delete-products', deleteProduct)
-router.get('/find-products', findProduct)
-router.get('/delete-products', deleteProduct)
+router.post('/', createProduct)
+router.get('/', listProduct)
+router.get('/:productId', findProduct)
+router.delete('/:productId', deleteProduct)
+router.patch('/:productId', updateProduct)
 module.exports = router
