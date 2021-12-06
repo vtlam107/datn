@@ -12,5 +12,17 @@ module.exports = {
     listUser: async (req, res) => {
         const result = await User.find()
         return res.json(result);
+    },
+    deleteUser: async (req, res) => {
+        await User.deleteOne();
+    },
+    findUser: async (req, res) => {
+        const result = await User.where();
+        query.findOne()
+        return res.json(result);
+    },
+    deleteUser: async (req, res) => {
+        const reult = await User.deleteOne()
+        return res.json(result);
     }
 }
